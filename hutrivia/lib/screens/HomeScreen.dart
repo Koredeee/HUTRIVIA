@@ -28,15 +28,23 @@ class _HomeScreenState extends State<HomeScreen> {
         body: ListView(
           children: [
             GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, "/umum");
-                },
-                child: Text("Umum")),
+              onTap: () {
+                Navigator.pushNamed(context, "/umum");
+              },
+              child: Text(
+                "Umum",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
             GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, "/tokoh");
-                },
-                child: Text("Tokoh"))
+              onTap: () {
+                Navigator.pushNamed(context, "/tokoh");
+              },
+              child: Text(
+                "Tokoh",
+                style: TextStyle(color: Colors.white),
+              ),
+            )
           ],
         ));
   }
