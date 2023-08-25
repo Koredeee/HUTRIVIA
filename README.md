@@ -1,3 +1,3 @@
 # HUTRIVIA
 
-A simple quiz app about Indonesian knowledges
+A simple quiz app about Indonesian Independence topic
