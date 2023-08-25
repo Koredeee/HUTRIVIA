@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Text(
                 "Umum",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 30),
+                style: TextStyle(color: Colors.pinkAccent, fontSize: 30),
               ),
             ),
             GestureDetector(
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Text(
                 "Tokoh",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 30),
+                style: TextStyle(color: Colors.pink.shade400, fontSize: 30),
               ),
             )
           ],
