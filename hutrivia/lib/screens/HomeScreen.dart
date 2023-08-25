@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
           shadowColor: Colors.transparent,
         ),
         body: ListView(
+          padding: EdgeInsets.all(150),
           children: [
             GestureDetector(
               onTap: () {
@@ -33,7 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               child: Text(
                 "Umum",
-                style: TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontSize: 30),
               ),
             ),
             GestureDetector(
@@ -42,7 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               child: Text(
                 "Tokoh",
-                style: TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontSize: 30),
               ),
             )
           ],
