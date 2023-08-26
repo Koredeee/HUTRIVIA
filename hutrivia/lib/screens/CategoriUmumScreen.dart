@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_final_fields, prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_final_fields, prefer_const_constructors_in_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:hutrivia/Constants.dart';
@@ -48,10 +48,8 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
 
   // create an index to loop through _questions
   int index = 0;
-
   // score variable
   int score = 0;
-
   // create a boolean value to check if the user has clicked
   bool isPressed = false;
 
@@ -199,7 +197,13 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
         //     child: CircularProgressIndicator(),
         //   );
         // }
-        return const Center(child: Text('No Data'));
+        return Container(
+          color: Colors.blue,
+          child: Icon(
+            Icons.facebook,
+            size: 100,
+          ),
+        );
       },
     );
   }

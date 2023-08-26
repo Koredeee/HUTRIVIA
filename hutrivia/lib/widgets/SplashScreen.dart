@@ -24,10 +24,11 @@ class _SpalshScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.blue,
-        child: Icon(
-          Icons.facebook,
-          size: 100,
-        ));
+      color: Colors.blue,
+      child: Icon(
+        Icons.facebook,
+        size: 100,
+      ),
+    );
   }
 }

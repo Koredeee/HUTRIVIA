@@ -30,6 +30,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
+  // ignore: prefer_const_constructors_in_immutables
   MyApp({Key? key}) : super(key: key);
 
   @override
