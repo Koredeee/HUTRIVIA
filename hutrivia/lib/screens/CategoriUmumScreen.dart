@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_final_fields, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
-import 'package:hutrivia/Constants.dart';
+import 'package:hutrivia/constants/Constants.dart';
 import 'package:hutrivia/models/DatabaseConnect.dart';
 import 'package:hutrivia/models/QuestionModel.dart';
 import 'package:hutrivia/widgets/NextButton.dart';

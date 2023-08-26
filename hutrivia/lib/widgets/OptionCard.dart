@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hutrivia/Constants.dart';
+import 'package:hutrivia/constants/Constants.dart';
 
 class OptionCard extends StatelessWidget {
   const OptionCard({

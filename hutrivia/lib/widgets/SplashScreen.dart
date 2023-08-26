@@ -3,7 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hutrivia/Constants.dart';
+// import 'package:hutrivia/Constants.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -23,11 +23,11 @@ class _SpalshScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.blue,
-        child: Icon(
-          Icons.facebook,
-          size: 100,
-        ));
+    return Scaffold(
+      backgroundColor: Color(0xFFF4F6FA),
+      body: Column(
+        children: [Image.asset('T_assets/splash.png'), Text("HUTRIVIA",)],
+      ),
+    );
   }
 }
