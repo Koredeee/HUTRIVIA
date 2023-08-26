@@ -1,7 +1,7 @@
 // ignore_for_file: unnecessary_const, file_names
 
 import 'package:flutter/material.dart';
-import 'package:hutrivia/Constants.dart';
+import 'package:hutrivia/constants/Constants.dart';
 
 class ResultBox extends StatelessWidget {
   const ResultBox(
