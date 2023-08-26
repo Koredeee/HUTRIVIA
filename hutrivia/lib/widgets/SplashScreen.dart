@@ -28,37 +28,10 @@ class _SpalshScreenState extends State<SplashScreen> {
       backgroundColor: Color(0xFFF4F6FA),
       body: Column(
         children: [
-<<<<<<< HEAD
           Image.asset('T_assets/splash.png'),
           Text(
             "HUTRIVIA",
           )
-=======
-          Padding(padding: EdgeInsets.symmetric(vertical: 100)),
-          Image.asset(
-            'T_assets/splash.png',
-            height: 223,
-            alignment: Alignment.center,
-          ),
-          Text(
-            textAlign: TextAlign.center,
-            "HUTRIVIA",
-            style: TextStyle(
-                color: Color(0xFF2C353C),
-                fontSize: 60,
-                fontFamily: "Poppins",
-                fontWeight: FontWeight.w700),
-          ),
-          Text(
-            textAlign: TextAlign.center,
-            "Ayo tes pengetahuan kamu seputar kemerdekaan Indonesia!",
-            style: TextStyle(
-                color: Color(0xFF2C353C),
-                fontSize: 16,
-                fontFamily: "Poppins",
-                fontWeight: FontWeight.w400),
-          ),
->>>>>>> origin/main
         ],
       ),
     );
