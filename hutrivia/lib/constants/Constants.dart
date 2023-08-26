@@ -11,5 +11,14 @@ const incorrect = Color(0xFFD74339);
 // neutral color
 const neutral = Color(0xFFFFFFFF);
 
+// white color
+const white = Color(0xFFF4F6FA);
+
+// light grey color
+const lightGrey = Color(0xFFDBDDE2);
+
+// grey color
+const grey = Color(0xFFBDB1B4);
+
 // set some background color
 const Color background = Color(0xFFD74339);

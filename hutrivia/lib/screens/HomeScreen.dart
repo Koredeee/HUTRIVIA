@@ -13,6 +13,26 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+    return Scaffold(
+        backgroundColor: background,
+        appBar: AppBar(
+          // title: const Text('HUTRIVIA'),
+          backgroundColor: background,
+          // shadowColor: Colors.transparent,
+        ),
+        body: ListView(
+          padding: EdgeInsets.all(150),
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, "/umum");
+              },
+              child: Text(
+                "Umum",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.pinkAccent, fontSize: 30),
+=======
     return WillPopScope(
       onWillPop: () => Future.value(false),
       child: Scaffold(
@@ -35,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.pinkAccent, fontSize: 30),
                 ),
+>>>>>>> origin/main
               ),
               GestureDetector(
                 onTap: () {

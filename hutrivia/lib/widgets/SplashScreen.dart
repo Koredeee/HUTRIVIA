@@ -32,6 +32,27 @@ class _SpalshScreenState extends State<SplashScreen> {
           Text(
             "HUTRIVIA",
           )
+<<<<<<< HEAD
+=======
+=======
+          Padding(padding: EdgeInsets.symmetric(vertical: 100)),
+          Image.asset(
+            'T_assets/splash.png',
+            height: 223,
+            alignment: Alignment.center,
+          ),
+          Text(
+            textAlign: TextAlign.center,
+            "HUTRIVIA",
+            style: Bold(60),
+          ),
+          Text(
+            textAlign: TextAlign.center,
+            "Ayo tes pengetahuan kamu seputar kemerdekaan Indonesia!",
+            style: Regular(16),
+          ),
+>>>>>>> origin/main
+>>>>>>> origin/main
         ],
       ),
     );
