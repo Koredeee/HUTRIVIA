@@ -41,7 +41,7 @@ class _SpalshScreenState extends State<SplashScreen> {
                 color: Color(0xFF2C353C),
                 fontSize: 60,
                 fontFamily: "Poppins",
-                fontWeight: FontWeight.bold),
+                fontWeight: FontWeight.w700),
           ),
           Text(
             textAlign: TextAlign.center,
@@ -50,7 +50,7 @@ class _SpalshScreenState extends State<SplashScreen> {
                 color: Color(0xFF2C353C),
                 fontSize: 16,
                 fontFamily: "Poppins",
-                fontWeight: FontWeight.normal),
+                fontWeight: FontWeight.w400),
           ),
         ],
       ),
