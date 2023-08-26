@@ -94,7 +94,7 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
       return;
     } else {
       if (value == true) {
-        score++;
+        score += 10;
       }
       setState(() {
         isPressed = true;

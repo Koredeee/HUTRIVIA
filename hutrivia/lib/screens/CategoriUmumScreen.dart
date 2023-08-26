@@ -92,7 +92,7 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
       return;
     } else {
       if (value == true) {
-        score++;
+        score += 10;
       }
       setState(() {
         isPressed = true;

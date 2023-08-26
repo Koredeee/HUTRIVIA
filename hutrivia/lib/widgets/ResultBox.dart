@@ -17,6 +17,8 @@ class ResultBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final int totalResult = questionLength * 10;
+
     return AlertDialog(
       backgroundColor: background,
       content: Padding(
@@ -32,13 +34,13 @@ class ResultBox extends StatelessWidget {
             const SizedBox(height: 20),
             CircleAvatar(
                 child: Text(
-                  '$result/$questionLength',
+                  '$result',
                   style: TextStyle(fontSize: 30),
                 ),
                 radius: 70,
-                backgroundColor: result == questionLength / 2
+                backgroundColor: result == totalResult / 2
                     ? Colors.yellow // when the result is half of the questions
-                    : result < questionLength / 2
+                    : result < totalResult / 2
                         ? incorrect // when the result is less than half
                         : correct // when the result is more than half
                 ),
@@ -46,9 +48,9 @@ class ResultBox extends StatelessWidget {
               height: 20,
             ),
             Text(
-              result == questionLength / 2
+              result == totalResult / 2
                   ? 'Almost There' // when the result is half of the questions
-                  : result < questionLength / 2
+                  : result < totalResult / 2
                       ? 'Try Again' // when the result is less than half
                       : 'Great!',
               style: const TextStyle(color: neutral),
