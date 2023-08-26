@@ -37,20 +37,12 @@ class _SpalshScreenState extends State<SplashScreen> {
           Text(
             textAlign: TextAlign.center,
             "HUTRIVIA",
-            style: TextStyle(
-                color: Color(0xFF2C353C),
-                fontSize: 60,
-                fontFamily: "Poppins",
-                fontWeight: FontWeight.w700),
+            style: Bold(60),
           ),
           Text(
             textAlign: TextAlign.center,
             "Ayo tes pengetahuan kamu seputar kemerdekaan Indonesia!",
-            style: TextStyle(
-                color: Color(0xFF2C353C),
-                fontSize: 16,
-                fontFamily: "Poppins",
-                fontWeight: FontWeight.w400),
+            style: Regular(16),
           ),
         ],
       ),

@@ -16,9 +16,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         backgroundColor: background,
         appBar: AppBar(
-          title: const Text('HUTRIVIA'),
+          // title: const Text('HUTRIVIA'),
           backgroundColor: background,
-          shadowColor: Colors.transparent,
+          // shadowColor: Colors.transparent,
         ),
         body: ListView(
           padding: EdgeInsets.all(150),

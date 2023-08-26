@@ -1,57 +1,65 @@
 import 'package:flutter/material.dart';
 
-TextStyle ExtraBold() {
+TextStyle ExtraBold(double fontSizeYeah) {
   return TextStyle(
       color: Color(0xFF2C353C),
       fontFamily: "Poppins",
+      fontSize: fontSizeYeah,
       fontWeight: FontWeight.w800);
 }
 
-TextStyle Bold() {
+TextStyle Bold(double fontSizeYeah) {
   return TextStyle(
       color: Color(0xFF2C353C),
       fontFamily: "Poppins",
+      fontSize: fontSizeYeah,
       fontWeight: FontWeight.w700);
 }
 
-TextStyle SemiBold() {
+TextStyle SemiBold(double fontSizeYeah) {
   return TextStyle(
       color: Color(0xFF2C353C),
       fontFamily: "Poppins",
+      fontSize: fontSizeYeah,
       fontWeight: FontWeight.w600);
 }
 
-TextStyle Medium() {
+TextStyle Medium(double fontSizeYeah) {
   return TextStyle(
       color: Color(0xFF2C353C),
       fontFamily: "Poppins",
+      fontSize: fontSizeYeah,
       fontWeight: FontWeight.w500);
 }
 
-TextStyle Regular() {
+TextStyle Regular(double fontSizeYeah) {
   return TextStyle(
       color: Color(0xFF2C353C),
       fontFamily: "Poppins",
+      fontSize: fontSizeYeah,
       fontWeight: FontWeight.w400);
 }
 
-TextStyle Light() {
+TextStyle Light(double fontSizeYeah) {
   return TextStyle(
       color: Color(0xFF2C353C),
       fontFamily: "Poppins",
+      fontSize: fontSizeYeah,
       fontWeight: FontWeight.w300);
 }
 
-TextStyle ExtraLight() {
+TextStyle ExtraLight(double fontSizeYeah) {
   return TextStyle(
       color: Color(0xFF2C353C),
       fontFamily: "Poppins",
+      fontSize: fontSizeYeah,
       fontWeight: FontWeight.w200);
 }
 
-TextStyle Thin() {
+TextStyle Thin(double fontSizeYeah) {
   return TextStyle(
       color: Color(0xFF2C353C),
       fontFamily: "Poppins",
+      fontSize: fontSizeYeah,
       fontWeight: FontWeight.w100);
 }
