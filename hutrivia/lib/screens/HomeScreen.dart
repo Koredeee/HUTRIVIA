@@ -13,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Scaffold(
         backgroundColor: background,
         appBar: AppBar(
@@ -31,19 +32,43 @@ class _HomeScreenState extends State<HomeScreen> {
                 "Umum",
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.pinkAccent, fontSize: 30),
+=======
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child: Scaffold(
+          backgroundColor: background,
+          appBar: AppBar(
+            title: const Text('HUTRIVIA'),
+            automaticallyImplyLeading: false,
+            backgroundColor: background,
+            shadowColor: Colors.transparent,
+          ),
+          body: ListView(
+            padding: EdgeInsets.all(150),
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, "/umum");
+                },
+                child: Text(
+                  "Umum",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.pinkAccent, fontSize: 30),
+                ),
+>>>>>>> origin/main
               ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, "/tokoh");
-              },
-              child: Text(
-                "Tokoh",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.pink.shade400, fontSize: 30),
-              ),
-            )
-          ],
-        ));
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, "/tokoh");
+                },
+                child: Text(
+                  "Tokoh",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.pink.shade400, fontSize: 30),
+                ),
+              )
+            ],
+          )),
+    );
   }
 }

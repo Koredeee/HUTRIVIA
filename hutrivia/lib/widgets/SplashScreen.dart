@@ -28,6 +28,12 @@ class _SpalshScreenState extends State<SplashScreen> {
       backgroundColor: Color(0xFFF4F6FA),
       body: Column(
         children: [
+<<<<<<< HEAD
+          Image.asset('T_assets/splash.png'),
+          Text(
+            "HUTRIVIA",
+          )
+=======
           Padding(padding: EdgeInsets.symmetric(vertical: 100)),
           Image.asset(
             'T_assets/splash.png',
@@ -44,6 +50,7 @@ class _SpalshScreenState extends State<SplashScreen> {
             "Ayo tes pengetahuan kamu seputar kemerdekaan Indonesia!",
             style: Regular(16),
           ),
+>>>>>>> origin/main
         ],
       ),
     );
