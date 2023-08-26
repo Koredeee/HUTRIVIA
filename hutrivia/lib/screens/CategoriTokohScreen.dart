@@ -116,90 +116,94 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: _questions as Future<List<Question>>,
-      builder: (ctx, snapshot) {
-        // if (snapshot.connectionState = ConnectionState.done) {
-        if (!snapshot.hasData) CircularProgressIndicator();
-        if (snapshot.hasError) {
-          return Center(
-            child: Text('${snapshot.error}'),
-          );
-        } else if (snapshot.hasData) {
-          var extractedData = snapshot.data as List<Question>;
-          int finalIdx = extractedData.length;
-          return Scaffold(
-            backgroundColor: background,
-            appBar: AppBar(
-              title: const Text('HUTRIVIA'),
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child: FutureBuilder(
+        future: _questions as Future<List<Question>>,
+        builder: (ctx, snapshot) {
+          // if (snapshot.connectionState = ConnectionState.done) {
+          if (!snapshot.hasData) CircularProgressIndicator();
+          if (snapshot.hasError) {
+            return Center(
+              child: Text('${snapshot.error}'),
+            );
+          } else if (snapshot.hasData) {
+            var extractedData = snapshot.data as List<Question>;
+            int finalIdx = extractedData.length;
+            return Scaffold(
               backgroundColor: background,
-              shadowColor: Colors.transparent,
-              actions: [
-                Padding(
-                  padding: const EdgeInsets.all(18),
-                  child: Text(
-                    'Score: $score',
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                )
-              ],
-            ),
-            body: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Column(children: [
-                // add the questionWidget here
-                QuestionsWidget(
-                  indexAction: index, // currently at 0.
-                  question: extractedData[index]
-                      .title, // means the first question in the list.
-                  totalQuestions:
-                      extractedData.length, // total length of the list.
-                ),
-                const Divider(color: neutral),
-                const SizedBox(height: 25.0),
-
-                // displaying the options and the correct and incorrect answers
-                for (int i = 0; i < extractedData[index].options.length; i++)
-                  GestureDetector(
-                    onTap: () => checkAnswerAndUpdate(
-                        extractedData[index].options.values.toList()[i]),
-                    child: OptionCard(
-                      option: extractedData[index].options.keys.toList()[i],
-                      // we need to check if the answer is correct or not
-                      // we need this value
-                      color: isPressed
-                          ? extractedData[index].options.values.toList()[i] ==
-                                  true
-                              ? correct
-                              : incorrect
-                          : neutral,
+              appBar: AppBar(
+                title: const Text('HUTRIVIA'),
+                automaticallyImplyLeading: false,
+                backgroundColor: background,
+                shadowColor: Colors.transparent,
+                actions: [
+                  Padding(
+                    padding: const EdgeInsets.all(18),
+                    child: Text(
+                      'Score: $score',
+                      style: const TextStyle(fontSize: 18),
                     ),
-                  ),
-              ]),
-            ),
-            floatingActionButton: GestureDetector(
-              onTap: () => nextQuestion(extractedData.length),
-              child: Padding(
+                  )
+                ],
+              ),
+              body: Container(
+                width: double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: NextButton(
-                  wording: extractedData.length == finalIdx
-                      ? "Finish"
-                      : "Next Question",
+                child: Column(children: [
+                  // add the questionWidget here
+                  QuestionsWidget(
+                    indexAction: index, // currently at 0.
+                    question: extractedData[index]
+                        .title, // means the first question in the list.
+                    totalQuestions:
+                        extractedData.length, // total length of the list.
+                  ),
+                  const Divider(color: neutral),
+                  const SizedBox(height: 25.0),
+
+                  // displaying the options and the correct and incorrect answers
+                  for (int i = 0; i < extractedData[index].options.length; i++)
+                    GestureDetector(
+                      onTap: () => checkAnswerAndUpdate(
+                          extractedData[index].options.values.toList()[i]),
+                      child: OptionCard(
+                        option: extractedData[index].options.keys.toList()[i],
+                        // we need to check if the answer is correct or not
+                        // we need this value
+                        color: isPressed
+                            ? extractedData[index].options.values.toList()[i] ==
+                                    true
+                                ? correct
+                                : incorrect
+                            : neutral,
+                      ),
+                    ),
+                ]),
+              ),
+              floatingActionButton: GestureDetector(
+                onTap: () => nextQuestion(extractedData.length),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: NextButton(
+                    wording: index == extractedData.length - 1
+                        ? "Finish"
+                        : "Next Question",
+                  ),
                 ),
               ),
-            ),
-            floatingActionButtonLocation:
-                FloatingActionButtonLocation.centerFloat,
-          );
-        }
-        // } else {
-        //   return const Center(
-        //     child: CircularProgressIndicator(),
-        //   );
-        // }
-        return const Center(child: Text('No Data'));
-      },
+              floatingActionButtonLocation:
+                  FloatingActionButtonLocation.centerFloat,
+            );
+          }
+          // } else {
+          //   return const Center(
+          //     child: CircularProgressIndicator(),
+          //   );
+          // }
+          return const Center(child: Text('No Data'));
+        },
+      ),
     );
   }
 }
