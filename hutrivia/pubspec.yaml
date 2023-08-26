@@ -76,32 +76,55 @@ flutter:
     - family: Poppins
       fonts:
         - asset: T_assets/Poppins/Poppins-Italic.ttf
+          style: italic
 
         - asset: T_assets/Poppins/Poppins-Regular.ttf
+          weight: 400
 
         - asset: T_assets/Poppins/Poppins-Medium.ttf
+          weight: 500
         - asset: T_assets/Poppins/Poppins-MediumItalic.ttf
+          weight: 500
+          style: italic
 
         - asset: T_assets/Poppins/Poppins-Light.ttf
+          weight: 300
         - asset: T_assets/Poppins/Poppins-LightItalic.ttf
+          weight: 300
+          style: italic
 
         - asset: T_assets/Poppins/Poppins-ExtraLight.ttf
+          weight: 200
         - asset: T_assets/Poppins/Poppins-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
 
         - asset: T_assets/Poppins/Poppins-Bold.ttf
+          weight: 700
         - asset: T_assets/Poppins/Poppins-BoldItalic.ttf
+          weight: 700
+          style: italic
 
         - asset: T_assets/Poppins/Poppins-SemiBold.ttf
+          weight: 600
         - asset: T_assets/Poppins/Poppins-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
 
         - asset: T_assets/Poppins/Poppins-ExtraBold.ttf
+          weight: 800
         - asset: T_assets/Poppins/Poppins-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
 
         - asset: T_assets/Poppins/Poppins-Black.ttf
         - asset: T_assets/Poppins/Poppins-BlackItalic.ttf
 
         - asset: T_assets/Poppins/Poppins-Thin.ttf
+          weight: 100
         - asset: T_assets/Poppins/Poppins-ThinItalic.ttf
+          weight: 100
+          style: italic
 
   #   - family: Trajan Pro
   #     fonts:
