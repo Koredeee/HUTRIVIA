@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:hutrivia/constants/fontStyle.dart';
 // import 'package:hutrivia/Constants.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -23,18 +24,35 @@ class _SpalshScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return Scaffold(
       backgroundColor: Color(0xFFF4F6FA),
       body: Column(
-        children: [Image.asset('T_assets/splash.png'), Text("HUTRIVIA",)],
-=======
-    return Container(
-      color: Colors.blue,
-      child: Icon(
-        Icons.facebook,
-        size: 100,
->>>>>>> origin/main
+        children: [
+          Padding(padding: EdgeInsets.symmetric(vertical: 100)),
+          Image.asset(
+            'T_assets/splash.png',
+            height: 223,
+            alignment: Alignment.center,
+          ),
+          Text(
+            textAlign: TextAlign.center,
+            "HUTRIVIA",
+            style: TextStyle(
+                color: Color(0xFF2C353C),
+                fontSize: 60,
+                fontFamily: "Poppins",
+                fontWeight: FontWeight.bold),
+          ),
+          Text(
+            textAlign: TextAlign.center,
+            "Ayo tes pengetahuan kamu seputar kemerdekaan Indonesia!",
+            style: TextStyle(
+                color: Color(0xFF2C353C),
+                fontSize: 16,
+                fontFamily: "Poppins",
+                fontWeight: FontWeight.normal),
+          ),
+        ],
       ),
     );
   }
