@@ -26,25 +26,28 @@ class _SpalshScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF4F6FA),
-      body: Column(
-        children: [
-          Padding(padding: EdgeInsets.symmetric(vertical: 100)),
-          Image.asset(
-            'T_assets/splash.png',
-            height: 223,
-            alignment: Alignment.center,
-          ),
-          Text(
-            textAlign: TextAlign.center,
-            "HUTRIVIA",
-            style: Bold(60),
-          ),
-          Text(
-            textAlign: TextAlign.center,
-            "Ayo tes pengetahuan kamu seputar kemerdekaan Indonesia!",
-            style: Regular(16),
-          ),
-        ],
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+        child: Column(
+          children: [
+            Padding(padding: EdgeInsets.symmetric(vertical: 100)),
+            Image.asset(
+              'T_assets/splash.png',
+              height: 223,
+              alignment: Alignment.center,
+            ),
+            Text(
+              textAlign: TextAlign.center,
+              "HUTRIVIA",
+              style: Bold(60),
+            ),
+            Text(
+              textAlign: TextAlign.center,
+              "Ayo tes pengetahuan kamu seputar kemerdekaan Indonesia!",
+              style: Regular(16),
+            ),
+          ],
+        ),
       ),
     );
   }
