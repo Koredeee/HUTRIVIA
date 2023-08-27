@@ -112,6 +112,7 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
       isAlreadySelected = false;
     });
     Navigator.pop(context);
+    Navigator.pushNamed(context, "/homepage");
   }
 
   @override
@@ -176,7 +177,7 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
                                     true
                                 ? correct
                                 : incorrect
-                            : neutral,
+                            : lightGrey,
                       ),
                     ),
                 ]),
