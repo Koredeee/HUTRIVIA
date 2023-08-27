@@ -25,3 +25,5 @@ const defcolor = Color(0xFF2C353C);
 
 // set some background color
 const Color background = Color(0xFFD74339);
+
+const black = Color(0xFF2C353C);

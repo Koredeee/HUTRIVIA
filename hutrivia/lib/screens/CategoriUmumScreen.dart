@@ -130,11 +130,14 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
             var extractedData = snapshot.data as List<Question>;
             int finalIdx = extractedData.length;
             return Scaffold(
-              backgroundColor: background,
+              backgroundColor: white,
               appBar: AppBar(
-                title: const Text('HUTRIVIA'),
+                title: const Text(
+                  'HUTRIVIA',
+                  style: TextStyle(color: black),
+                ),
                 automaticallyImplyLeading: false,
-                backgroundColor: background,
+                backgroundColor: white,
                 shadowColor: Colors.transparent,
                 actions: [
                   Padding(
@@ -175,7 +178,7 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
                                     true
                                 ? correct
                                 : incorrect
-                            : neutral,
+                            : lightGrey,
                       ),
                     ),
                 ]),
