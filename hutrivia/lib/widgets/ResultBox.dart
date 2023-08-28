@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:hutrivia/constants/Constants.dart';
+import 'package:hutrivia/constants/fontStyle.dart';
 
 class ResultBox extends StatelessWidget {
   const ResultBox(
@@ -20,51 +21,76 @@ class ResultBox extends StatelessWidget {
     final int totalResult = questionLength * 10;
 
     return AlertDialog(
-      backgroundColor: background,
+      backgroundColor: neutral,
       content: Padding(
-        padding: const EdgeInsets.all(70),
+        padding: const EdgeInsets.all(30),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Result',
-              style: TextStyle(color: neutral, fontSize: 22),
+              'SKOR',
+              style: TextStyle(
+                  color: Color(0xFF2C353C),
+                  fontFamily: "Poppins",
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 20),
             CircleAvatar(
                 child: Text(
                   '$result',
-                  style: TextStyle(fontSize: 30),
+                  style: TextStyle(
+                      color: neutral,
+                      fontFamily: "Poppins",
+                      fontSize: 40,
+                      fontWeight: FontWeight.w700),
                 ),
                 radius: 70,
                 backgroundColor: result == totalResult / 2
-                    ? Colors.yellow // when the result is half of the questions
+                    ? Color(
+                        0xFFD7C739) // when the result is half of the questions
                     : result < totalResult / 2
                         ? incorrect // when the result is less than half
                         : correct // when the result is more than half
                 ),
             const SizedBox(
-              height: 20,
+              height: 25,
             ),
             Text(
               result == totalResult / 2
-                  ? 'Almost There' // when the result is half of the questions
+                  ? 'Tidak Buruk!' // when the result is half of the questions
                   : result < totalResult / 2
-                      ? 'Try Again' // when the result is less than half
-                      : 'Great!',
-              style: const TextStyle(color: neutral),
+                      ? 'Coba lagi, ya!' // when the result is less than half
+                      : 'Kerja Bagus!',
+              style: const TextStyle(
+                  color: black,
+                  fontFamily: "Poppins",
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400),
             ),
             const SizedBox(height: 25),
             GestureDetector(
               onTap: onPressed,
-              child: const Text(
-                'Start Over',
-                style: TextStyle(
-                    color: neutral,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: neutral,
+                  borderRadius: BorderRadius.circular(20.0),
+                  border: Border.all(color: background),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      top: 10.0, bottom: 10, left: 20, right: 20),
+                  child: const Text(
+                    'Main Lagi',
+                    style: TextStyle(
+                      color: background,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      // letterSpacing: 1.0,
+                    ),
+                  ),
+                ),
               ),
             )
           ],
