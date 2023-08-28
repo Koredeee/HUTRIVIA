@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:hutrivia/constants/Constants.dart';
+import 'package:hutrivia/constants/fontStyle.dart';
+import 'package:hutrivia/widgets/QuizCategoryCard.dart';
 
 // taking the Stateful Widget cause it's going to be the parent widget and all the functions and variables will be in this widget so we will need to change state of our widget.
 class HomeScreen extends StatefulWidget {
@@ -17,36 +19,47 @@ class _HomeScreenState extends State<HomeScreen> {
       onWillPop: () => Future.value(false),
       child: Scaffold(
           backgroundColor: background,
-          appBar: AppBar(
-            title: const Text('HUTRIVIA'),
-            automaticallyImplyLeading: false,
-            backgroundColor: background,
-            shadowColor: Colors.transparent,
-          ),
-          body: ListView(
-            padding: EdgeInsets.all(150),
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, "/umum");
-                },
-                child: Text(
-                  "Umum",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.pinkAccent, fontSize: 30),
-                ),
+          body: Padding(
+            padding: const EdgeInsets.only(
+                top: 100, bottom: 30, left: 20, right: 20),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: white,
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, "/tokoh");
-                },
-                child: Text(
-                  "Tokoh",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.pink.shade400, fontSize: 30),
-                ),
-              )
-            ],
+              child: ListView(
+                children: [
+                  Container(
+                    width: 220,
+                    height: 220,
+                    alignment: Alignment.center,
+                    child: Image.asset("T_assets/garuda.png"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Text(
+                      "Pilih kategori dulu, ya!",
+                      style: SemiBold(20),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  QuizCategoryCard(
+                    categoryRoute: "/umum",
+                    title: "Umum",
+                    desc:
+                        "Tes pengetahuan umum kemerdekaan dari masa perjuangan hingga masa proklamasi",
+                    img: "T_assets/umum.png",
+                  ),
+                  Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                  QuizCategoryCard(
+                      categoryRoute: "/tokoh",
+                      title: "Tokoh-tokoh Kemerdekaan",
+                      desc:
+                          "Tes pengetahuan mengenai tokoh-tokoh kemerdekaan Indonesia",
+                      img: "T_assets/tokoh.png"),
+                ],
+              ),
+            ),
           )),
     );
   }
