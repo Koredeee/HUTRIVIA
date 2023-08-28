@@ -13,15 +13,26 @@ class OptionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: color,
-      child: ListTile(
-        title: Text(
-          option,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 22.0,
-            color: color == lightGrey ? black : white,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2.5),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        color: color,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 5),
+          child: ListTile(
+            title: Text(
+              option,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: "Poppins",
+                fontWeight: FontWeight.w500,
+                color: color == lightGrey ? black : white,
+              ),
+            ),
           ),
         ),
       ),

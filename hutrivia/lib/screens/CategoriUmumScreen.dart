@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:hutrivia/constants/Constants.dart';
+import 'package:hutrivia/constants/fontStyle.dart';
 import 'package:hutrivia/models/DatabaseConnect.dart';
 import 'package:hutrivia/models/QuestionModel.dart';
 import 'package:hutrivia/widgets/NextButton.dart';
@@ -134,10 +135,15 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
               appBar: AppBar(
                 title: const Text(
                   'HUTRIVIA',
-                  style: TextStyle(color: black),
+                  style: TextStyle(
+                    color: neutral,
+                    fontSize: 32,
+                    fontFamily: "Poppins",
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
                 automaticallyImplyLeading: false,
-                backgroundColor: white,
+                backgroundColor: background,
                 shadowColor: Colors.transparent,
                 actions: [
                   Padding(
@@ -153,6 +159,26 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: Column(children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10, top: 25),
+                      child: Text(
+                        "Kategori",
+                        style: Regular(16),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Text(
+                        "Umum",
+                        style: Bold(24),
+                      ),
+                    ),
+                  ),
                   // add the questionWidget here
                   QuestionsWidget(
                     indexAction: index, // currently at 0.
@@ -162,7 +188,7 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
                         extractedData.length, // total length of the list.
                   ),
                   const Divider(color: neutral),
-                  const SizedBox(height: 25.0),
+                  const SizedBox(height: 0),
 
                   // displaying the options and the correct and incorrect answers
                   for (int i = 0; i < extractedData[index].options.length; i++)
@@ -189,8 +215,8 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: NextButton(
                     wording: index == extractedData.length - 1
-                        ? "Finish"
-                        : "Next Question",
+                        ? "Selesai"
+                        : "Pertanyaan Selanjutnya",
                   ),
                 ),
               ),
