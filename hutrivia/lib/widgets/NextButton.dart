@@ -3,7 +3,7 @@ import 'package:hutrivia/constants/Constants.dart';
 
 class NextButton extends StatelessWidget {
   final String wording;
-  NextButton({required this.wording});
+  const NextButton({super.key, required this.wording});
 
   @override
   Widget build(BuildContext context) {

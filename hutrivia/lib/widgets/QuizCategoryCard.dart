@@ -3,12 +3,13 @@ import 'package:hutrivia/constants/Constants.dart';
 import 'package:hutrivia/constants/fontStyle.dart';
 
 class QuizCategoryCard extends StatelessWidget {
-  String categoryRoute;
-  String title;
-  String desc;
-  String img;
+  final String categoryRoute;
+  final String title;
+  final String desc;
+  final String img;
 
-  QuizCategoryCard({
+  const QuizCategoryCard({
+    super.key,
     required this.categoryRoute,
     required this.title,
     required this.desc,
@@ -22,8 +23,8 @@ class QuizCategoryCard extends StatelessWidget {
         Navigator.pushNamed(context, categoryRoute);
       },
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 22),
+        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 22),
         decoration: BoxDecoration(
           color: lightGrey,
           borderRadius: BorderRadius.circular(20),
