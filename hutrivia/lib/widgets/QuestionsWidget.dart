@@ -16,11 +16,25 @@ class QuestionsWidget extends StatelessWidget {
   final int totalQuestions;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.centerLeft,
-      child: Text(
-        'Question ${indexAction + 1}/$totalQuestions: $question',
-        style: const TextStyle(fontSize: 24.0, color: black),
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Container(
+        decoration: BoxDecoration(
+          color: neutral,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: lightGrey, width: 3),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 10),
+          child: Container(
+            alignment: Alignment.center,
+            child: Text(
+              'Pertanyaan ${indexAction + 1}/$totalQuestions:\n $question',
+              style: const TextStyle(fontSize: 20.0, color: black),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
       ),
     );
   }

@@ -10,11 +10,19 @@ class NextButton extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-          color: neutral, borderRadius: BorderRadius.circular(10.0)),
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
+        color: neutral,
+        borderRadius: BorderRadius.circular(20.0),
+        border: Border.all(color: background),
+      ),
+      padding: const EdgeInsets.symmetric(vertical: 11.0),
       child: Text(
         wording,
         textAlign: TextAlign.center,
+        style: TextStyle(
+          color: background,
+          fontWeight: FontWeight.w500,
+          fontSize: 16,
+        ),
       ),
     );
   }
