@@ -32,11 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     width: 220,
                     height: 220,
-                    alignment: Alignment.center,
+                    alignment: Alignment.topCenter,
                     child: Image.asset("T_assets/garuda.png"),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    padding: const EdgeInsets.only(top: 15, bottom: 12),
                     child: Text(
                       "Pilih kategori dulu, ya!",
                       style: SemiBold(20),
