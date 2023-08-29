@@ -81,7 +81,7 @@ class ResultBox extends StatelessWidget {
                   padding: const EdgeInsets.only(
                       top: 10.0, bottom: 10, left: 20, right: 20),
                   child: const Text(
-                    'Main Lagi',
+                    'Main lagi',
                     style: TextStyle(
                       color: background,
                       fontSize: 20,
