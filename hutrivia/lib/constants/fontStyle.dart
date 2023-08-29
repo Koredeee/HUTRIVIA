@@ -24,6 +24,14 @@ TextStyle SemiBold(double fontSizeYeah) {
       fontWeight: FontWeight.w600);
 }
 
+TextStyle BatalButton(double fontSizeYeah) {
+  return TextStyle(
+      color: Color(0xFFF4F2EF),
+      fontFamily: "Poppins",
+      fontSize: fontSizeYeah,
+      fontWeight: FontWeight.w600);
+}
+
 TextStyle Medium(double fontSizeYeah) {
   return TextStyle(
       color: Color(0xFF2C353C),
