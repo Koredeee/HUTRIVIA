@@ -81,9 +81,9 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
       } else {
         // we display the message that the user have to select the options
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: const Text('Please select any option'),
+          content: const Text('Mohon pilih salah satu opsi'),
           behavior: SnackBarBehavior.floating,
-          margin: EdgeInsets.symmetric(vertical: 20),
+          margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         ));
       }
     }
@@ -165,7 +165,7 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 10, top: 25),
+                      padding: const EdgeInsets.only(left: 20, top: 35),
                       child: Text(
                         "Kategori",
                         style: Regular(16),
@@ -175,7 +175,7 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
+                      padding: const EdgeInsets.only(left: 20.0),
                       child: Text(
                         "Tokoh",
                         style: Bold(24),

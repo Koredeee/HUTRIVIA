@@ -20,10 +20,8 @@ const lightGrey = Color(0xFFDBDDE2);
 // grey color
 const grey = Color(0xFFBDB1B4);
 
-// color for fonts
-const defcolor = Color(0xFF2C353C);
-
 // set some background color
 const Color background = Color(0xFFD74339);
 
+// color for fonts
 const black = Color(0xFF2C353C);

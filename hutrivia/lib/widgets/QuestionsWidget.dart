@@ -18,15 +18,16 @@ class QuestionsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10),
+      padding: const EdgeInsets.only(top: 15),
       child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
           color: neutral,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: lightGrey, width: 3),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 10),
+          padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 20),
           child: Container(
             alignment: Alignment.center,
             child: Column(

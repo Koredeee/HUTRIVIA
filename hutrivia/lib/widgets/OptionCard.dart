@@ -14,22 +14,22 @@ class OptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 1),
+      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
         color: color,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5),
+          padding: const EdgeInsets.symmetric(vertical: 1),
           child: ListTile(
             title: Text(
               option,
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 20.0,
+                fontSize: 17.0,
                 fontFamily: "Poppins",
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w400,
                 color: color == lightGrey ? black : white,
               ),
             ),
