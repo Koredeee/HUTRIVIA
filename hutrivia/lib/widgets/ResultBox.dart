@@ -78,12 +78,13 @@ class ResultBox extends StatelessWidget {
                   border: Border.all(color: background),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 10.0, bottom: 10, left: 20, right: 20),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
                   child: const Text(
                     'Main lagi',
                     style: TextStyle(
                       color: background,
+                      fontFamily: "Poppins",
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
                       // letterSpacing: 1.0,
