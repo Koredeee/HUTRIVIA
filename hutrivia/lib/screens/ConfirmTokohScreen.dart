@@ -12,6 +12,7 @@ class ConfirmTokohScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: background,
         shadowColor: Colors.transparent,
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: const EdgeInsets.only(bottom: 30, left: 20, right: 20),
