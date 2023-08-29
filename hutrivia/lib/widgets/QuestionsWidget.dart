@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hutrivia/constants/Constants.dart';
+import 'package:hutrivia/constants/fontStyle.dart';
 
 class QuestionsWidget extends StatelessWidget {
   const QuestionsWidget(
@@ -28,10 +29,19 @@ class QuestionsWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 10),
           child: Container(
             alignment: Alignment.center,
-            child: Text(
-              'Pertanyaan ${indexAction + 1}/$totalQuestions:\n $question',
-              style: const TextStyle(fontSize: 20.0, color: black),
-              textAlign: TextAlign.center,
+            child: Column(
+              children: [
+                Text(
+                  'Pertanyaan ${indexAction + 1}/$totalQuestions:',
+                  style: RegularSecond(17),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  question,
+                  style: Regular(17),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
         ),

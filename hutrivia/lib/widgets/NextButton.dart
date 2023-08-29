@@ -14,14 +14,15 @@ class NextButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
         border: Border.all(color: background),
       ),
-      padding: const EdgeInsets.symmetric(vertical: 11.0),
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Text(
         wording,
         textAlign: TextAlign.center,
         style: TextStyle(
+          fontFamily: "Poppins",
           color: background,
           fontWeight: FontWeight.w500,
-          fontSize: 16,
+          fontSize: 15,
         ),
       ),
     );

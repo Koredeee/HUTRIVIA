@@ -129,85 +129,88 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
             );
           } else if (snapshot.hasData) {
             var extractedData = snapshot.data as List<Question>;
-            int finalIdx = extractedData.length;
             return Scaffold(
-              backgroundColor: white,
+              backgroundColor: background,
               appBar: AppBar(
-                title: const Text(
-                  'HUTRIVIA',
-                  style: TextStyle(
-                    color: neutral,
-                    fontSize: 32,
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w700,
+                title: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: const Text(
+                    'HUTRIVIA',
+                    style: TextStyle(
+                      color: neutral,
+                      fontSize: 28,
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
                 automaticallyImplyLeading: false,
-                backgroundColor: background,
+                backgroundColor: Colors.transparent,
                 shadowColor: Colors.transparent,
-                actions: [
-                  Padding(
-                    padding: const EdgeInsets.all(18),
-                    child: Text(
-                      'Score: $score',
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                  )
-                ],
               ),
-              body: Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: Column(children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10, top: 25),
-                      child: Text(
-                        "Kategori",
-                        style: Regular(16),
+              body: Padding(
+                padding: const EdgeInsets.only(top: 5),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: white, borderRadius: BorderRadius.circular(40)),
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Column(children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10, top: 25),
+                        child: Text(
+                          "Kategori",
+                          style: Regular(16),
+                        ),
                       ),
                     ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
-                      child: Text(
-                        "Umum",
-                        style: Bold(24),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          "Umum",
+                          style: Bold(24),
+                        ),
                       ),
                     ),
-                  ),
-                  // add the questionWidget here
-                  QuestionsWidget(
-                    indexAction: index, // currently at 0.
-                    question: extractedData[index]
-                        .title, // means the first question in the list.
-                    totalQuestions:
-                        extractedData.length, // total length of the list.
-                  ),
-                  const Divider(color: neutral),
-                  const SizedBox(height: 0),
+                    // add the questionWidget here
+                    QuestionsWidget(
+                      indexAction: index, // currently at 0.
+                      question: extractedData[index]
+                          .title, // means the first question in the list.
+                      totalQuestions:
+                          extractedData.length, // total length of the list.
+                    ),
+                    const Divider(color: neutral),
+                    const SizedBox(height: 0),
 
-                  // displaying the options and the correct and incorrect answers
-                  for (int i = 0; i < extractedData[index].options.length; i++)
-                    GestureDetector(
-                      onTap: () => checkAnswerAndUpdate(
-                          extractedData[index].options.values.toList()[i]),
-                      child: OptionCard(
-                        option: extractedData[index].options.keys.toList()[i],
-                        // we need to check if the answer is correct or not
-                        // we need this value
-                        color: isPressed
-                            ? extractedData[index].options.values.toList()[i] ==
-                                    true
-                                ? correct
-                                : incorrect
-                            : lightGrey,
+                    // displaying the options and the correct and incorrect answers
+                    for (int i = 0;
+                        i < extractedData[index].options.length;
+                        i++)
+                      GestureDetector(
+                        onTap: () => checkAnswerAndUpdate(
+                            extractedData[index].options.values.toList()[i]),
+                        child: OptionCard(
+                          option: extractedData[index].options.keys.toList()[i],
+                          // we need to check if the answer is correct or not
+                          // we need this value
+                          color: isPressed
+                              ? extractedData[index]
+                                          .options
+                                          .values
+                                          .toList()[i] ==
+                                      true
+                                  ? correct
+                                  : incorrect
+                              : lightGrey,
+                        ),
                       ),
-                    ),
-                ]),
+                  ]),
+                ),
               ),
               floatingActionButton: GestureDetector(
                 onTap: () => nextQuestion(extractedData.length),

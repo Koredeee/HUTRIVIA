@@ -131,33 +131,28 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
             );
           } else if (snapshot.hasData) {
             var extractedData = snapshot.data as List<Question>;
-            int finalIdx = extractedData.length;
             return Scaffold(
-              backgroundColor: white,
+              backgroundColor: background,
               appBar: AppBar(
-                title: const Text(
-                  'HUTRIVIA',
-                  style: TextStyle(
-                    color: neutral,
-                    fontSize: 32,
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w700,
+                title: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: const Text(
+                    'HUTRIVIA',
+                    style: TextStyle(
+                      color: neutral,
+                      fontSize: 32,
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
                 automaticallyImplyLeading: false,
-                backgroundColor: background,
+                backgroundColor: Colors.transparent,
                 shadowColor: Colors.transparent,
-                actions: [
-                  Padding(
-                    padding: const EdgeInsets.all(18),
-                    child: Text(
-                      'Score: $score',
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                  )
-                ],
               ),
               body: Container(
+                decoration: BoxDecoration(
+                    color: white, borderRadius: BorderRadius.circular(40)),
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 // decoration: BoxDecoration(

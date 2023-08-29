@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:hutrivia/constants/Constants.dart';
-import 'package:hutrivia/constants/fontStyle.dart';
 
 class ResultBox extends StatelessWidget {
   const ResultBox(

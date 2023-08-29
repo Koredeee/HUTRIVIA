@@ -40,6 +40,14 @@ TextStyle Regular(double fontSizeYeah) {
       fontWeight: FontWeight.w400);
 }
 
+TextStyle RegularSecond(double fontSizeYeah) {
+  return TextStyle(
+      color: Color(0xFF8D9098),
+      fontFamily: "Poppins",
+      fontSize: fontSizeYeah,
+      fontWeight: FontWeight.w400);
+}
+
 TextStyle Light(double fontSizeYeah) {
   return TextStyle(
       color: Color(0xFF2C353C),
