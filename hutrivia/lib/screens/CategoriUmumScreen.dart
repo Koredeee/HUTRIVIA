@@ -81,7 +81,7 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: const Text('Mohon pilih salah satu opsi'),
           behavior: SnackBarBehavior.floating,
-          margin: EdgeInsets.symmetric(vertical: 20),
+          margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         ));
       }
     }
