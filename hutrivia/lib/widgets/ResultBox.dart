@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_const, file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hutrivia/constants/Constants.dart';
 
 class ResultBox extends StatelessWidget {
@@ -37,22 +38,25 @@ class ResultBox extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             CircleAvatar(
-                child: Text(
-                  '$result',
-                  style: TextStyle(
-                      color: neutral,
-                      fontFamily: "Poppins",
-                      fontSize: 40,
-                      fontWeight: FontWeight.w700),
-                ),
-                radius: 70,
-                backgroundColor: result == totalResult / 2
-                    ? Color(
-                        0xFFD7C739) // when the result is half of the questions
-                    : result < totalResult / 2
-                        ? incorrect // when the result is less than half
-                        : correct // when the result is more than half
-                ),
+                    child: Text(
+                      '$result',
+                      style: TextStyle(
+                          color: neutral,
+                          fontFamily: "Poppins",
+                          fontSize: 40,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    radius: 70,
+                    backgroundColor: result == totalResult / 2
+                        ? Color(
+                            0xFFD7C739) // when the result is half of the questions
+                        : result < totalResult / 2
+                            ? incorrect // when the result is less than half
+                            : correct // when the result is more than half
+                    )
+                .animate()
+                .then()
+                .shake(),
             const SizedBox(
               height: 25,
             ),
