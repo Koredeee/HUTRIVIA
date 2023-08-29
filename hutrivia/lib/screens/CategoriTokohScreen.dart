@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hutrivia/constants/Constants.dart';
 import 'package:hutrivia/constants/fontStyle.dart';
 import 'package:hutrivia/models/DatabaseConnect.dart';
@@ -186,56 +187,64 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
                 //     topRight: Radius.circular(20),
                 //   ),
                 // ),
-                child: Column(children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 35),
-                      child: Text(
-                        "Kategori",
-                        style: Regular(16),
+                child: Animate(
+                  effects: [FadeEffect(duration: 800.ms)],
+                  child: Column(children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20, top: 35),
+                        child: Text(
+                          "Kategori",
+                          style: Regular(16),
+                        ),
                       ),
                     ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: Text(
-                        "Tokoh",
-                        style: Bold(24),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Text(
+                          "Tokoh",
+                          style: Bold(24),
+                        ),
                       ),
                     ),
-                  ),
-                  // add the questionWidget here
-                  QuestionsWidget(
-                    indexAction: index, // currently at 0.
-                    question: extractedData[index]
-                        .title, // means the first question in the list.
-                    totalQuestions:
-                        extractedData.length, // total length of the list.
-                  ),
-                  const Divider(color: neutral),
-                  const SizedBox(height: 0),
+                    // add the questionWidget here
+                    QuestionsWidget(
+                      indexAction: index, // currently at 0.
+                      question: extractedData[index]
+                          .title, // means the first question in the list.
+                      totalQuestions:
+                          extractedData.length, // total length of the list.
+                    ),
+                    const Divider(color: neutral),
+                    const SizedBox(height: 0),
 
-                  // displaying the options and the correct and incorrect answers
-                  for (int i = 0; i < extractedData[index].options.length; i++)
-                    GestureDetector(
-                      onTap: () => checkAnswerAndUpdate(
-                          extractedData[index].options.values.toList()[i]),
-                      child: OptionCard(
-                        option: extractedData[index].options.keys.toList()[i],
-                        // we need to check if the answer is correct or not
-                        // we need this value
-                        color: isPressed
-                            ? extractedData[index].options.values.toList()[i] ==
-                                    true
-                                ? correct
-                                : incorrect
-                            : lightGrey,
+                    // displaying the options and the correct and incorrect answers
+                    for (int i = 0;
+                        i < extractedData[index].options.length;
+                        i++)
+                      GestureDetector(
+                        onTap: () => checkAnswerAndUpdate(
+                            extractedData[index].options.values.toList()[i]),
+                        child: OptionCard(
+                          option: extractedData[index].options.keys.toList()[i],
+                          // we need to check if the answer is correct or not
+                          // we need this value
+                          color: isPressed
+                              ? extractedData[index]
+                                          .options
+                                          .values
+                                          .toList()[i] ==
+                                      true
+                                  ? correct
+                                  : incorrect
+                              : lightGrey,
+                        ),
                       ),
-                    ),
-                ]),
+                  ]),
+                ),
               ),
               floatingActionButton: GestureDetector(
                 onTap: () => nextQuestion(extractedData.length),

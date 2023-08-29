@@ -56,7 +56,7 @@ class ResultBox extends StatelessWidget {
                     )
                 .animate()
                 .then()
-                .shake(),
+                .shake(duration: 900.ms),
             const SizedBox(
               height: 25,
             ),

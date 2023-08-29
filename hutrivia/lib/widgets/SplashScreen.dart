@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hutrivia/constants/fontStyle.dart';
 // import 'package:hutrivia/Constants.dart';
 
@@ -26,27 +27,30 @@ class _SpalshScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF4F6FA),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-        child: Column(
-          children: [
-            Padding(padding: EdgeInsets.symmetric(vertical: 100)),
-            Image.asset(
-              'T_assets/splash.png',
-              height: 223,
-              alignment: Alignment.center,
-            ),
-            Text(
-              textAlign: TextAlign.center,
-              "HUTRIVIA",
-              style: Bold(60),
-            ),
-            Text(
-              textAlign: TextAlign.center,
-              "Ayo tes pengetahuan kamu seputar kemerdekaan Indonesia!",
-              style: Regular(16),
-            ),
-          ],
+      body: Animate(
+        effects: [FadeEffect(duration: 1000.ms)],
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          child: Column(
+            children: [
+              Padding(padding: EdgeInsets.symmetric(vertical: 100)),
+              Image.asset(
+                'T_assets/splash.png',
+                height: 223,
+                alignment: Alignment.center,
+              ),
+              Text(
+                textAlign: TextAlign.center,
+                "HUTRIVIA",
+                style: Bold(60),
+              ),
+              Text(
+                textAlign: TextAlign.center,
+                "Ayo tes pengetahuan kamu seputar kemerdekaan Indonesia!",
+                style: Regular(16),
+              ),
+            ],
+          ),
         ),
       ),
     );
