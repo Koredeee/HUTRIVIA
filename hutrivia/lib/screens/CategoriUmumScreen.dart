@@ -215,7 +215,7 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
               floatingActionButton: GestureDetector(
                 onTap: () => nextQuestion(extractedData.length),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
                   child: NextButton(
                     wording: index == extractedData.length - 1
                         ? "Selesai"
@@ -233,11 +233,12 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
           //   );
           // }
           return Container(
-            color: Colors.blue,
-            child: Icon(
-              Icons.facebook,
-              size: 100,
-            ),
+            color: background,
+            // child: Icon(
+            //   Icons.facebook,
+            //   size: 100,
+            //   color: background,
+            // ),
           );
         },
       ),

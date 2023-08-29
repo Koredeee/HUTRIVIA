@@ -21,7 +21,7 @@ class OptionCard extends StatelessWidget {
         ),
         color: color,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 1),
+          padding: const EdgeInsets.symmetric(vertical: 3),
           child: ListTile(
             title: Text(
               option,

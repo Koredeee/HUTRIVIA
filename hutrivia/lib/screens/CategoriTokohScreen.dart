@@ -215,7 +215,7 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
               floatingActionButton: GestureDetector(
                 onTap: () => nextQuestion(extractedData.length),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
                   child: NextButton(
                     wording: index == extractedData.length - 1
                         ? "Selesai"
@@ -232,7 +232,9 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
           //     child: CircularProgressIndicator(),
           //   );
           // }
-          return const Center(child: Text('No Data'));
+          return Container(
+            color: background,
+          );
         },
       ),
     );
