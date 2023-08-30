@@ -59,16 +59,16 @@ class ResultBox extends StatelessWidget {
                     )
                 .animate()
                 .then()
-                .shake(duration: 700.ms),
+                .shake(duration: 1000.ms),
             const SizedBox(
               height: 25,
             ),
             Text(
               result == totalResult / 2
-                  ? 'Tidak Buruk!' // when the result is half of the questions
+                  ? 'Tidak buruk!' // when the result is half of the questions
                   : result < totalResult / 2
                       ? 'Coba lagi, ya!' // when the result is less than half
-                      : 'Kerja Bagus!',
+                      : 'Kerja bagus!',
               style: const TextStyle(
                   color: black,
                   fontFamily: "Poppins",

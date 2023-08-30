@@ -138,7 +138,7 @@ class _CategoriTokohScreenState extends State<CategoriTokohScreen> {
           } else if (snapshot.hasData) {
             var extractedData = snapshot.data as List<Question>;
             if (showAnimation) {
-              Timer(Duration(seconds: 5), () {
+              Timer(Duration(seconds: 3), () {
                 if (!mounted) return;
                 setState(() {
                   showAnimation = false;
