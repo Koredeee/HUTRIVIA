@@ -20,6 +20,9 @@ class ResultBox extends StatelessWidget {
     final int totalResult = questionLength * 10;
 
     return AlertDialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
       backgroundColor: neutral,
       content: Padding(
         padding: const EdgeInsets.all(30),
