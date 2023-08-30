@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hutrivia/constants/Constants.dart';
 import 'package:hutrivia/constants/fontStyle.dart';
 
@@ -22,42 +23,45 @@ class QuizCategoryCard extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, categoryRoute);
       },
-      child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 22),
-        decoration: BoxDecoration(
-          color: lightGrey,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    textAlign: TextAlign.left,
-                    style: Bold(15),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5),
-                    child: Text(
-                      desc,
+      child: Animate(
+        effects: [FadeEffect(duration: 1000.ms)],
+        child: Container(
+          margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 22),
+          decoration: BoxDecoration(
+            color: lightGrey,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
                       textAlign: TextAlign.left,
-                      style: Regular(11),
+                      style: Bold(15),
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: Text(
+                        desc,
+                        textAlign: TextAlign.left,
+                        style: Regular(11),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(
-              width: 115,
-              height: 115,
-              child: Image.asset(img),
-            ),
-          ],
+              SizedBox(
+                width: 115,
+                height: 115,
+                child: Image.asset(img),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_final_fields, prefer_const_constructors_in_immutables, prefer_const_constructors
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hutrivia/constants/Constants.dart';
 import 'package:hutrivia/constants/fontStyle.dart';
 import 'package:hutrivia/models/DatabaseConnect.dart';
@@ -9,6 +12,7 @@ import 'package:hutrivia/widgets/NextButton.dart';
 import 'package:hutrivia/widgets/OptionCard.dart';
 import 'package:hutrivia/widgets/QuestionsWidget.dart';
 import 'package:hutrivia/widgets/ResultBox.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 // taking the Stateful Widget cause it's going to be the parent widget and all the functions and variables will be in this widget so we will need to change state of our widget.
 class CategoriUmumScreen extends StatefulWidget {
@@ -55,6 +59,8 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
   bool isPressed = false;
 
   bool isAlreadySelected = false;
+
+  bool showAnimation = true;
 
   // create a function to display the next question
   void nextQuestion(int questionLength) {
@@ -129,6 +135,27 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
             );
           } else if (snapshot.hasData) {
             var extractedData = snapshot.data as List<Question>;
+            if (showAnimation) {
+              Timer(Duration(seconds: 5), () {
+                if (!mounted) return;
+                setState(() {
+                  showAnimation = false;
+                });
+              });
+
+              return Container(
+                color: background,
+                child: AnimatedBuilder(
+                  animation: AlwaysStoppedAnimation(0),
+                  builder: (BuildContext context, Widget? child) {
+                    return Center(
+                        child: LoadingAnimationWidget.threeArchedCircle(
+                            color: white, size: 60));
+                  },
+                ),
+              );
+            }
+
             return Scaffold(
               backgroundColor: background,
               appBar: AppBar(
@@ -155,61 +182,65 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
                       color: white, borderRadius: BorderRadius.circular(40)),
                   width: double.infinity,
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Column(children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 35),
-                        child: Text(
-                          "Kategori",
-                          style: Regular(16),
+                  child: Animate(
+                    effects: [FadeEffect(duration: 800.ms)],
+                    child: Column(children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20, top: 35),
+                          child: Text(
+                            "Kategori",
+                            style: Regular(16),
+                          ),
                         ),
                       ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20.0),
-                        child: Text(
-                          "Umum",
-                          style: Bold(24),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20.0),
+                          child: Text(
+                            "Umum",
+                            style: Bold(24),
+                          ),
                         ),
                       ),
-                    ),
-                    // add the questionWidget here
-                    QuestionsWidget(
-                      indexAction: index, // currently at 0.
-                      question: extractedData[index]
-                          .title, // means the first question in the list.
-                      totalQuestions:
-                          extractedData.length, // total length of the list.
-                    ),
-                    const Divider(color: neutral),
-                    const SizedBox(height: 0),
+                      // add the questionWidget here
+                      QuestionsWidget(
+                        indexAction: index, // currently at 0.
+                        question: extractedData[index]
+                            .title, // means the first question in the list.
+                        totalQuestions:
+                            extractedData.length, // total length of the list.
+                      ),
+                      const Divider(color: neutral),
+                      const SizedBox(height: 0),
 
-                    // displaying the options and the correct and incorrect answers
-                    for (int i = 0;
-                        i < extractedData[index].options.length;
-                        i++)
-                      GestureDetector(
-                        onTap: () => checkAnswerAndUpdate(
-                            extractedData[index].options.values.toList()[i]),
-                        child: OptionCard(
-                          option: extractedData[index].options.keys.toList()[i],
-                          // we need to check if the answer is correct or not
-                          // we need this value
-                          color: isPressed
-                              ? extractedData[index]
-                                          .options
-                                          .values
-                                          .toList()[i] ==
-                                      true
-                                  ? correct
-                                  : incorrect
-                              : lightGrey,
+                      // displaying the options and the correct and incorrect answers
+                      for (int i = 0;
+                          i < extractedData[index].options.length;
+                          i++)
+                        GestureDetector(
+                          onTap: () => checkAnswerAndUpdate(
+                              extractedData[index].options.values.toList()[i]),
+                          child: OptionCard(
+                            option:
+                                extractedData[index].options.keys.toList()[i],
+                            // we need to check if the answer is correct or not
+                            // we need this value
+                            color: isPressed
+                                ? extractedData[index]
+                                            .options
+                                            .values
+                                            .toList()[i] ==
+                                        true
+                                    ? correct
+                                    : incorrect
+                                : lightGrey,
+                          ),
                         ),
-                      ),
-                  ]),
+                    ]),
+                  ),
                 ),
               ),
               floatingActionButton: GestureDetector(
@@ -232,14 +263,7 @@ class _CategoriUmumScreenState extends State<CategoriUmumScreen> {
           //     child: CircularProgressIndicator(),
           //   );
           // }
-          return Container(
-            color: background,
-            // child: Icon(
-            //   Icons.facebook,
-            //   size: 100,
-            //   color: background,
-            // ),
-          );
+          return SizedBox.shrink();
         },
       ),
     );

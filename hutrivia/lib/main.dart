@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hutrivia/models/DatabaseConnect.dart';
 import 'package:hutrivia/screens/CategoriTokohScreen.dart';
 import 'package:hutrivia/screens/CategoriUmumScreen.dart';
+import 'package:hutrivia/screens/ConfirmTokohScreen.dart';
 import 'package:hutrivia/screens/HomeScreen.dart';
+import 'package:hutrivia/screens/ConfirmUmumScreen.dart';
 import 'package:hutrivia/widgets/SplashScreen.dart';
 
 void main() {
@@ -42,6 +44,8 @@ class _MyAppState extends State<MyApp> {
     "/homepage": (context) => HomeScreen(),
     "/umum": (context) => CategoriUmumScreen(),
     "/tokoh": (context) => CategoriTokohScreen(),
+    "/confirm_umum": (context) => ConfirmUmumScreen(),
+    "/confirm_tokoh": (context) => ConfirmTokohScreen(),
   };
 
   @override

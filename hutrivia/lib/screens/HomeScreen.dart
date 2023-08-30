@@ -44,19 +44,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   QuizCategoryCard(
-                    categoryRoute: "/umum",
+                    categoryRoute: "/confirm_umum",
                     title: "Umum",
                     desc:
                         "Tes pengetahuan umum kemerdekaan dari masa perjuangan hingga masa proklamasi",
                     img: "T_assets/umum.png",
                   ),
                   Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-                  QuizCategoryCard(
-                      categoryRoute: "/tokoh",
-                      title: "Tokoh-tokoh Kemerdekaan",
-                      desc:
-                          "Tes pengetahuan mengenai tokoh-tokoh kemerdekaan Indonesia",
-                      img: "T_assets/tokoh.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/tokoh");
+                    },
+                    child: QuizCategoryCard(
+                        categoryRoute: "/confirm_tokoh",
+                        title: "Tokoh-tokoh Kemerdekaan",
+                        desc:
+                            "Tes pengetahuan mengenai tokoh-tokoh kemerdekaan Indonesia",
+                        img: "T_assets/tokoh.png"),
+                  ),
                 ],
               ),
             ),
