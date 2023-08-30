@@ -112,47 +112,50 @@ class _ConfirmUmumScreenState extends State<ConfirmUmumScreen> {
                       ],
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                    alignment: Alignment.center,
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/homepage");
-                          },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 43, vertical: 8),
-                            decoration: BoxDecoration(
-                                color: Color(0xFFBDB1B4),
-                                borderRadius: BorderRadius.circular(17)),
-                            child: Text(
-                              "Batal",
-                              style: BatalButton(15),
+                  Center(
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                      alignment: Alignment.center,
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(context, "/homepage");
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 43, vertical: 8),
+                              decoration: BoxDecoration(
+                                  color: Color(0xFFBDB1B4),
+                                  borderRadius: BorderRadius.circular(17)),
+                              child: Text(
+                                "Batal",
+                                style: BatalButton(15),
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/umum");
-                          },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 8),
-                            decoration: BoxDecoration(
-                                color: background,
-                                borderRadius: BorderRadius.circular(17)),
-                            child: Text(
-                              "Mainkan",
-                              style: BatalButton(15),
-                            ),
+                          SizedBox(
+                            width: 10,
                           ),
-                        )
-                      ],
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(context, "/umum");
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 8),
+                              decoration: BoxDecoration(
+                                  color: background,
+                                  borderRadius: BorderRadius.circular(17)),
+                              child: Text(
+                                "Mainkan",
+                                style: BatalButton(15),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
