@@ -121,7 +121,7 @@ class _ConfirmUmumScreenState extends State<ConfirmUmumScreen> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.pushNamed(context, "/homepage");
+                              Navigator.pop(context);
                             },
                             child: Container(
                               padding: EdgeInsets.symmetric(
