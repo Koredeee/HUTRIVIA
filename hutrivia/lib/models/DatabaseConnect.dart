@@ -6,10 +6,10 @@ import 'dart:convert';
 
 class DBconnect {
   final url = Uri.parse(
-      'https://hutrivia-9e096-default-rtdb.asia-southeast1.firebasedatabase.app/questions.json');
+      'https://hutriviadb-default-rtdb.asia-southeast1.firebasedatabase.app/questions.json');
 
   final urlTokoh = Uri.parse(
-      'https://hutrivia-9e096-default-rtdb.asia-southeast1.firebasedatabase.app/questions_2.json');
+      'https://hutriviadb-default-rtdb.asia-southeast1.firebasedatabase.app/questions_2.json');
 
   Future<void> addQuestion(Question question) async {
     http.post(
